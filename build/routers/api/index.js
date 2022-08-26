@@ -39,39 +39,35 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable no-fallthrough */
+/* eslint-disable no-sparse-arrays */
 var express_1 = __importDefault(require("express"));
 var path_1 = __importDefault(require("path"));
 var fs_1 = require("fs");
 var vaildatefilename_1 = __importDefault(require("../../controllers/vaildatefilename"));
 var router = express_1.default.Router();
-router.get("/", function (req, res, next) {
+router.get('/', function (req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var resultImage, resultimaag, resultimaag, error_1;
+        var resultImage, resultimaag, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 6, , 7]);
-                    return [4 /*yield*/, (0, vaildatefilename_1.default)(req, res, next)];
+                    _a.trys.push([0, 4, , 5]);
+                    return [4 /*yield*/, (0, vaildatefilename_1.default)(req)];
                 case 1:
                     resultImage = _a.sent();
-                    console.log(resultImage);
-                    if (!(resultImage === null || resultImage === void 0 ? void 0 : resultImage.error)) return [3 /*break*/, 3];
+                    if (!resultImage) return [3 /*break*/, 3];
                     return [4 /*yield*/, fs_1.promises.readFile("".concat(path_1.default.join(__dirname, "../../thumbs/23.jpg")))];
                 case 2:
                     resultimaag = _a.sent();
                     res.end(resultimaag);
-                    return [3 /*break*/, 5];
-                case 3: return [4 /*yield*/, fs_1.promises.readFile("".concat(path_1.default.join(__dirname, "../../thumbs/23.jpg")))];
+                    _a.label = 3;
+                case 3: return [3 /*break*/, 5];
                 case 4:
-                    resultimaag = _a.sent();
-                    res.end(resultimaag);
-                    _a.label = 5;
-                case 5: return [3 /*break*/, 7];
-                case 6:
                     error_1 = _a.sent();
                     res.json({ error: error_1 });
-                    return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/];
             }
         });
     });

@@ -1,4 +1,5 @@
 "use strict";
+/* eslint-disable no-undef */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22,7 +23,7 @@ var CustomProcessor = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CustomProcessor.prototype.displayJasmineStarted = function (info, log) {
-        return "".concat(log);
+        return "TypeScript ".concat(log);
     };
     return CustomProcessor;
 }(jasmine_spec_reporter_1.DisplayProcessor));
@@ -31,5 +32,5 @@ jasmine.getEnv().addReporter(new jasmine_spec_reporter_1.SpecReporter({
     spec: {
         displayStacktrace: jasmine_spec_reporter_1.StacktraceOption.NONE
     },
-    customProcessors: [CustomProcessor],
+    customProcessors: [CustomProcessor]
 }));

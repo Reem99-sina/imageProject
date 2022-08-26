@@ -46,7 +46,7 @@ var logger = function (req, res, next) { return __awaiter(void 0, void 0, void 0
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                _b.trys.push([0, 6, , 7]);
+                _b.trys.push([0, 6,  7]);
                 _a = req.query, filename = _a.filename, width = _a.width, height = _a.height;
                 if (!filename) return [3 /*break*/, 4];
                 return [4 /*yield*/, (0, sharp_1.default)(path_1.default.join(__dirname, "../thumbs/23.jpg")).metadata()];
@@ -63,16 +63,21 @@ var logger = function (req, res, next) { return __awaiter(void 0, void 0, void 0
                 res.cookie("image", filename);
                 next();
                 _b.label = 3;
-            case 3: return [3 /*break*/, 5];
+                break;
+            case 3:{
+                return [3,5];
+            }
             case 4:
                 next();
                 _b.label = 5;
-            case 5: return [3 /*break*/, 7];
+                break;
+            case 5: 
+            return [3,7];
             case 6:
                 error_1 = _b.sent();
                 res.json({ message: error_1 });
-                return [3 /*break*/, 7];
-            case 7: return [2 /*return*/];
+                return [3,7];
+            case 7: return [2];
         }
     });
 }); };

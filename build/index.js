@@ -7,8 +7,8 @@ var express_1 = __importDefault(require("express"));
 var index_1 = __importDefault(require("./routers/api/index"));
 var app = (0, express_1.default)();
 var port = 3003;
-app.use("/api/image", index_1.default);
+app.use('/api/image', index_1.default);
 app.listen(port, function () {
-    console.log("done server connection");
+    console.log('done server connection');
 });
 exports.default = app;

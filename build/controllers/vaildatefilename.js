@@ -40,12 +40,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var indexcontroller_1 = __importDefault(require("./indexcontroller"));
-var validateFilename = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
+var validateFilename = function (req) { return __awaiter(void 0, void 0, void 0, function () {
     var userImage, resultLogger;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                userImage = { filename: String(req.query.filename), width: Number(req.query.width), height: Number(req.query.height) };
+                userImage = {
+                    filename: String(req.query.filename),
+                    width: Number(req.query.width),
+                    height: Number(req.query.height)
+                };
                 return [4 /*yield*/, (0, indexcontroller_1.default)(userImage)];
             case 1:
                 resultLogger = _a.sent();
